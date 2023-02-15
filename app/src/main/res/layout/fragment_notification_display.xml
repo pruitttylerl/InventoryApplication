@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtNotificationHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:padding="10dp"
+        android:text="@string/notification"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gridBackground"
+        android:padding="10dp"
+        android:text="@string/inventory_application_notification"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/btnNotificationAccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/accept"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/btnNotificationDecline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/decline"
+        android:textSize="18sp" />
+
+</LinearLayout>
