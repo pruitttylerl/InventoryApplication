@@ -1,54 +1,86 @@
- <!-- FIXME: Nest this layout in a relative layout to fit another row of TextViews -->
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp">
+    android:background="@color/colorPrimary"
+    tools:context="com.snhu.cs360.inventoryapplication2.DisplayOneFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:background="@color/gridBackground"
-            android:text="@string/name"
-            android:id="@+id/txtNameHeader"
-            android:textSize="18sp"
-            android:padding="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:background="@color/gridBackground"
-            android:text="@string/quantity"
-            android:id="@+id/txtQuantityHeader"
-            android:textSize="18sp"
-            android:padding="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:background="@color/gridBackground"
-            android:text="@string/unit"
-            android:id="@+id/txtUnitHeader"
-            android:textSize="18sp"
-            android:padding="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:background="@color/gridBackground"
-            android:text="@string/value"
-            android:id="@+id/txtValueHeader"
-            android:textSize="18sp"
-            android:padding="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:background="@color/gridBackground"
-            android:text="@string/location"
-            android:id="@+id/txtLocationHeader"
-            android:textSize="18sp"
-            android:padding="10dp"/>
-        </LinearLayout>
+    <TextView
+        android:id="@+id/itemNameHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/item_name_header"/>
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name"/>
+
+    <TextView
+        android:id="@+id/itemQuantityHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/item_quantity_header"/>
+
+    <TextView
+        android:id="@+id/itemQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity"/>
+
+    <TextView
+        android:id="@+id/itemUnitsHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/item_units_header"/>
+
+    <TextView
+        android:id="@+id/itemUnits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/unit"/>
+
+    <TextView
+        android:id="@+id/itemValueHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/item_value_header"/>
+
+    <TextView
+        android:id="@+id/itemValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/value"/>
+
+    <TextView
+        android:id="@+id/itemLocationHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/item_location_header"/>
+
+    <TextView
+        android:id="@+id/itemLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/location"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:id="@+id/btnEdit"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:id="@+id/btnDelete"/>
+
+</LinearLayout>

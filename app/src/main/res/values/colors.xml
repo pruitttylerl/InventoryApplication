@@ -12,4 +12,9 @@
     <color name="databaseBackground">#FFBB86FC</color>
     <color name="gridBackground">#FF6200EE</color>
 
+    <color name="colorPrimary">#42A5F5</color>
+    <color name="colorPrimaryDark">#42A5F5</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorText">#FFF</color>
+
 </resources>

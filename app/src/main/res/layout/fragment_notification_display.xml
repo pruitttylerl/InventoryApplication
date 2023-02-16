@@ -26,20 +26,20 @@
         android:textColor="@color/white"
         android:textSize="18sp" />
     <Button
-        android:id="@+id/btnNotificationAccept"
+        android:id="@+id/btnNotificationEnable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:backgroundTint="@color/purple_200"
-        android:text="@string/accept"
+        android:text="@string/enable"
         android:textSize="18sp" />
     <Button
-        android:id="@+id/btnNotificationDecline"
+        android:id="@+id/btnNotificationDisable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:backgroundTint="@color/purple_200"
-        android:text="@string/decline"
+        android:text="@string/disable"
         android:textSize="18sp" />
 
 </LinearLayout>
