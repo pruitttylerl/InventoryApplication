@@ -44,9 +44,4 @@ public class Item {
         location = iLocation;
     }
 
-    public Item(String name, int quantity, String units, int value, String location) {
-        this(-1, name, quantity, units, value, location);
-    }
-
-
 }
