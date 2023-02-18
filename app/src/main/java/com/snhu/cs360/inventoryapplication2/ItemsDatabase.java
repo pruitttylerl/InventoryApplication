@@ -22,7 +22,7 @@ public class ItemsDatabase extends SQLiteOpenHelper {
     }
 
     /**
-     * getInstance
+     * getInstance this is a test comment
      * @param context
      * @return
      */
