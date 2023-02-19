@@ -44,4 +44,16 @@ public class Item {
         location = iLocation;
     }
 
+    public Item(String name, int quantity, String units, int value, String location) {
+        this(-1, name, quantity, units, value, location);
+    }
+
+    public Item(long id, Item item){
+        this(id, item.name, item.quantity, item.units, item.value, item.location );
+    }
+
+/*    public Item(Item i){
+        this(i.id, i.name, i.quantity, i.units, i.value, i.location);
+    }
+*/
 }

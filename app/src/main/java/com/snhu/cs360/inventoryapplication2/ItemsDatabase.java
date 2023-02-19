@@ -81,9 +81,9 @@ public class ItemsDatabase extends SQLiteOpenHelper {
             do {
                 long id = cursor.getInt(0);
                 String name = cursor.getString(1);
-                int quantity = Integer.parseInt(cursor.getString(2));    //TODO This should not throw an exception
+                int quantity = Integer.parseInt(cursor.getString(2));
                 String units = cursor.getString(3);
-                int value = Integer.parseInt(cursor.getString(4));       //TODO This should not throw an exception
+                int value = Integer.parseInt(cursor.getString(4));
                 String location = cursor.getString(5);
                 Item item = new Item(id, name, quantity, units, value, location);
                 items.add(item);
