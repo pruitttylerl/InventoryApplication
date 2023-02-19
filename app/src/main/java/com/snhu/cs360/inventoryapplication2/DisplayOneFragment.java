@@ -61,13 +61,13 @@ public class DisplayOneFragment extends Fragment {
         itemNameTextView.setText(item.getName());
 
         TextView itemQuantityTextView = (TextView) view.findViewById(R.id.itemQuantity);
-        itemQuantityTextView.setText(item.getQuantity());
+        itemQuantityTextView.setText(Integer.toString(item.getQuantity()));
 
         TextView itemUnitsTextView = (TextView) view.findViewById(R.id.itemUnits);
         itemUnitsTextView.setText(item.getUnits());
 
         TextView itemValueTextView = (TextView) view.findViewById(R.id.itemValue);
-        itemValueTextView.setText(item.getValue());
+        itemValueTextView.setText(Integer.toString(item.getValue()));
 
         TextView itemLocationTextView = (TextView) view.findViewById(R.id.itemLocation);
         itemLocationTextView.setText(item.getLocation());
@@ -86,13 +86,13 @@ public class DisplayOneFragment extends Fragment {
             txtItemName.setText(item.getName());
 
             EditText txtItemQuantity = editView.findViewById(R.id.txtItemQuantity);
-            txtItemQuantity.setText(item.getQuantity());
+            txtItemQuantity.setText(Integer.toString(item.getQuantity()));
 
             EditText txtItemUnits = editView.findViewById(R.id.txtItemUnits);
             txtItemUnits.setText(item.getUnits());
 
             EditText txtItemValue = editView.findViewById(R.id.txtItemValue);
-            txtItemValue.setText(item.getValue());
+            txtItemValue.setText(Integer.toString(item.getValue()));
 
             EditText txtItemLocation = editView.findViewById(R.id.txtItemLocation);
             txtItemLocation.setText(item.getLocation());

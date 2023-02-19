@@ -1,7 +1,5 @@
 package com.snhu.cs360.inventoryapplication2;
 
-import java.util.Objects;
-
 public class Item {
     private long id;
     private String name;
@@ -51,9 +49,4 @@ public class Item {
     public Item(long id, Item item){
         this(id, item.name, item.quantity, item.units, item.value, item.location );
     }
-
-/*    public Item(Item i){
-        this(i.id, i.name, i.quantity, i.units, i.value, i.location);
-    }
-*/
 }

@@ -13,8 +13,7 @@
     <EditText
         android:id="@+id/txtItemName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/name"/>
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/itemQuantityHeader"
@@ -26,8 +25,7 @@
         android:id="@+id/txtItemQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/quantity"/>
+        android:ems="10" />
 
     <TextView
         android:id="@+id/itemUnitsHeader"
@@ -39,8 +37,7 @@
         android:id="@+id/txtItemUnits"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/unit"/>
+        android:ems="10" />
 
     <TextView
         android:id="@+id/itemValueHeader"
@@ -52,8 +49,7 @@
         android:id="@+id/txtItemValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/value"/>
+        android:ems="10" />
 
     <TextView
         android:id="@+id/itemLocationHeader"
@@ -65,8 +61,7 @@
         android:id="@+id/txtItemLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/location"/>
+        android:ems="10" />
 
 
 

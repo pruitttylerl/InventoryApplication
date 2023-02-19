@@ -21,11 +21,6 @@ public class ItemsDatabase extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
-    /**
-     * getInstance this is a test comment
-     * @param context
-     * @return
-     */
     public static ItemsDatabase getInstance(Context context) {
         if (instance == null) {
             instance = new ItemsDatabase(context);
