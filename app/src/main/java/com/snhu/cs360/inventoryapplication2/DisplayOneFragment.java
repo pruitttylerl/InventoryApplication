@@ -110,13 +110,14 @@ public class DisplayOneFragment extends Fragment {
 
                 if (!isEdited) {
                     Toast.makeText(getContext(), "Error Editing Item", Toast.LENGTH_SHORT).show();
+                    //FIXME: DisplayOneFragment does not update fragment_display_one.xml until revisiting the fragment
                 } else {
                     listeners.forEach(listener -> listener.handleEdited(item, edited));
                     item = edited;
                     txtItemName.setText(item.getName());
-                    txtItemQuantity.setText(item.getQuantity());
+                    txtItemQuantity.setText(Integer.toString(item.getQuantity()));
                     txtItemUnits.setText(item.getUnits());
-                    txtItemValue.setText(item.getValue());
+                    txtItemValue.setText(Integer.toString(item.getValue()));
                     txtItemLocation.setText(item.getLocation());
                 }
             });

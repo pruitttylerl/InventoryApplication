@@ -49,6 +49,7 @@ public class ItemsDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + ItemTable.TABLE + "( " +
+                //FIXME: Possible bug with id incrementing to infinity
                 ItemTable.COL_ID + " integer primary key autoincrement, " +
                 ItemTable.COL_NAME + ", " +
                 ItemTable.COL_QUANTITY + ", " +

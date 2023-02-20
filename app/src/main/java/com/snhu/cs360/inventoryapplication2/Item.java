@@ -1,5 +1,7 @@
 package com.snhu.cs360.inventoryapplication2;
 
+import java.util.Objects;
+
 public class Item {
     private long id;
     private String name;
@@ -48,5 +50,15 @@ public class Item {
 
     public Item(long id, Item item){
         this(id, item.name, item.quantity, item.units, item.value, item.location );
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return id == item.id && Objects.equals(name, item.name) && Objects.equals(quantity, item.quantity)
+                && Objects.equals(units, item.units) && Objects.equals(value, item.value)
+                && Objects.equals(location, item.location);
     }
 }
