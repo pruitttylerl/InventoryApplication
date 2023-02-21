@@ -45,7 +45,7 @@ public class DisplayAllFragment extends Fragment implements DisplayOneFragment.I
             listener = (OnItemSelectedListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnBandSelectedListener");
+                    + " must implement OnItemSelectedListener");
         }
     }
 
@@ -63,7 +63,7 @@ public class DisplayAllFragment extends Fragment implements DisplayOneFragment.I
         RecyclerView recyclerView = view.findViewById(R.id.item_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        // Send bands to recycler view
+        // Send items to recycler view
         adapter = new ItemAdapter();
         recyclerView.setAdapter(adapter);
 

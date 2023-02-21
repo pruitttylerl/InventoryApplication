@@ -24,4 +24,8 @@
 
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+
+    <string name="createUsername">New Username:</string>
+    <string name="createPassword">New Password:</string>
+    <string name="create">Create</string>
 </resources>

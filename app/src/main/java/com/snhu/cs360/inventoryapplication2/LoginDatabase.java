@@ -77,21 +77,28 @@ public class LoginDatabase extends SQLiteOpenHelper {
         return logins;
     }
 
-    public Login getLogin(long loginId) {
-        Login login = null;
+/*    public Boolean validateLogin(String username, String password) {
+        boolean valid = false;
 
         SQLiteDatabase db = getReadableDatabase();
-        String sql = "SELECT * FROM " + LoginDatabase.LoginTable.TABLE + " WHERE " + LoginDatabase.LoginTable.COL_ID + " = ?";
-        Cursor cursor = db.rawQuery(sql, new String[]{Long.toString(loginId)});
 
-        if (cursor.moveToFirst()){
-            String username = cursor.getString(1);
-            String password = cursor.getString(2);
-            login = new Login(loginId, username, password);
+        String sql = "SELECT * FROM " + LoginDatabase.LoginTable.TABLE;
+
+        Cursor cursor = db.rawQuery(sql, null);
+        if (cursor.moveToFirst()) {
+            do {
+                String dbUsername = cursor.getString(1);
+                String dbPassword = cursor.getString(2);
+
+                if (username == dbUsername) {
+                    if (password == dbPassword) {
+                        valid = true;
+                    }
+                }
+            } while (cursor.moveToNext());
         }
-
-        return login;
-    }
+        return valid;
+    }*/
 
     public long addLogin(Login login) {
         SQLiteDatabase db = getWritableDatabase();
@@ -104,5 +111,4 @@ public class LoginDatabase extends SQLiteOpenHelper {
 
         return newId;
     }
-
 }

@@ -32,7 +32,6 @@ public class DisplayOneFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     public static void register(ItemListener listener) { listeners.add(listener); }
 
     //Implemented but not used
@@ -42,7 +41,7 @@ public class DisplayOneFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Get the band ID from the intent that started DetailsActivity
+        // Get the item ID from the intent that started DisplayOneActivity
         int itemId = 1;
         if (getArguments() != null) {
             itemId = getArguments().getInt("itemId");
@@ -133,7 +132,7 @@ public class DisplayOneFragment extends Fragment {
             boolean isDeleted = ItemsDatabase.getInstance(getContext()).deleteItem(item.getId());
 
             if (!isDeleted) {
-                Toast.makeText(getContext(), "Error Deleting Band", Toast. LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Error Deleting Item", Toast. LENGTH_SHORT).show();
             } else {
                 listeners.forEach(listener -> listener.handleDeleted(item));
                 getActivity().onBackPressed();

@@ -8,40 +8,28 @@
     android:background="@color/loginBackground">
 
     <TextView
-        android:id="@+id/usernameTextView"
+        android:id="@+id/createUsernameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/username" />
+        android:text="@string/createUsername" />
 
     <EditText
-        android:id="@+id/usernameEditText"
+        android:id="@+id/txtCreateUsername"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:ems="10"/>
 
     <TextView
-        android:id="@+id/passwordTextView"
+        android:id="@+id/createPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password" />
+        android:text="@string/createPassword" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/txtCreatePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/submit"/>
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register"/>
-
-
+        android:inputType="textPassword"
+        android:ems="10"/>
 
 </LinearLayout>
