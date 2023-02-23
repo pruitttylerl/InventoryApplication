@@ -1,5 +1,6 @@
 package com.snhu.cs360.inventoryapplication2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,20 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoginFragment extends Fragment {
-    private static final List<LoginFragment.LoginListener> listeners = new ArrayList<>();
-
-    public interface LoginListener {
-
-    }
-
-/*    private Login login;
-
-    public static LoginFragment newInstance() {
-        LoginFragment fragment = new LoginFragment();
-        return fragment;
-    }
-
-    public static void register(LoginFragment.LoginListener listener) { listeners.add(listener); }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,19 +62,43 @@ public class LoginFragment extends Fragment {
             builder.show();
         });
 
-/*        Button btnSubmit = view.findViewById(R.id.btnSubmit);
+        Button btnSubmit = view.findViewById(R.id.btnSubmit);
 
         btnSubmit.setOnClickListener(l -> {
+            //pull text from editViews
             EditText txtUsername = view.findViewById(R.id.usernameEditText);
             EditText txtPassword = view.findViewById(R.id.passwordEditText);
             String username = txtUsername.getText().toString();
             String password = txtPassword.getText().toString();
 
-            if (LoginDatabase.validateLogin(username, password)) {
-
-//                getActivity().onBackPressed();
+            if (LoginDatabase.getInstance(getContext()).validateLogin(username, password)) {
+                Intent intent = new Intent(getActivity(), DisplayAllActivity.class);
+                startActivity(intent);
+            }else {
+                Toast.makeText(getContext(), "Invalid Login", Toast.LENGTH_SHORT).show();
             }
-        });                          */
+        });
+
+        /*Button btnNotifications = view.findViewById(R.id.btnNotifications);
+
+        btnRegister.setOnClickListener(lRegister -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+            View editView = inflater.inflate(R.layout.fragment_notification_display, null);
+            builder.setView(editView);
+            builder.setTitle("Notification Preference");
+
+            Button btnEnable = editView.findViewById(R.id.btnNotifDisable);
+            Button btnDisable = editView.findViewById(R.id.btnNotifEnable);
+
+            btnEnable.setOnClickListener(lEnable -> {
+
+        });
+            btnDisable.setOnClickListener(lDisable -> {
+
+            });
+
+        }); */
         return view;
     }
 }

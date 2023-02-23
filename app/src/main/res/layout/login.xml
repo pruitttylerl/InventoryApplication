@@ -16,7 +16,8 @@
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:ems="10"/>
 
     <TextView
         android:id="@+id/passwordTextView"
@@ -28,7 +29,8 @@
         android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:ems="10"/>
 
     <Button
         android:id="@+id/btnSubmit"
@@ -41,6 +43,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register"/>
+
+    <Button
+        android:id="@+id/btnNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Notifications"/>
 
 
 

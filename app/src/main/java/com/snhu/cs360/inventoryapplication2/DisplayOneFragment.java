@@ -34,9 +34,6 @@ public class DisplayOneFragment extends Fragment {
     }
     public static void register(ItemListener listener) { listeners.add(listener); }
 
-    //Implemented but not used
-//    public static void remove(ItemListener listener) { listeners.remove (listener); }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

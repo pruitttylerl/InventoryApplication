@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/txtNotificationHeader"
+        android:id="@+id/txtNotifHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/teal_200"
@@ -16,7 +16,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/txtNotification"
+        android:id="@+id/txtNotifQuery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/gridBackground"
@@ -26,7 +26,7 @@
         android:textColor="@color/white"
         android:textSize="18sp" />
     <Button
-        android:id="@+id/btnNotificationEnable"
+        android:id="@+id/btnNotifEnable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -34,7 +34,7 @@
         android:text="@string/enable"
         android:textSize="18sp" />
     <Button
-        android:id="@+id/btnNotificationDisable"
+        android:id="@+id/btnNotifDisable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
