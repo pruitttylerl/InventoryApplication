@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 
+//not implemented yet.
+// TODO: Properly implement the preference class to allow for a more professional settings menu
+
 public class SettingsFragment extends PreferenceFragment
             implements SharedPreferences.OnSharedPreferenceChangeListener {
 

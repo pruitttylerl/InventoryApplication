@@ -56,27 +56,13 @@ public class LoginDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public List<Login> getLogins(){
-        List<Login> logins = new ArrayList<>();
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        String sql = "SELECT * FROM " + LoginDatabase.LoginTable.TABLE;
-
-        Cursor cursor = db.rawQuery(sql, null);
-        if (cursor.moveToFirst()) {
-            do {
-                long id = cursor.getInt(0);
-                String username = cursor.getString(1);
-                String password = cursor.getString(2);
-                Login login = new Login(id, username, password);
-                logins.add(login);
-            } while (cursor.moveToNext());
-        }
-
-        return logins;
-    }
-
+    /**
+     * Tests for correct username and password combination
+     * @param username User input username
+     * @param password user input password
+     *
+     * @return boolean value reflecting validity. True is valid username and password combination
+     */
     public Boolean validateLogin(String username, String password) {
         boolean valid = false;
 
@@ -84,15 +70,15 @@ public class LoginDatabase extends SQLiteOpenHelper {
 
         String sql = "SELECT * FROM " + LoginDatabase.LoginTable.TABLE;
 
-        //traverse the db
+        //Traverse the db
         Cursor cursor = db.rawQuery(sql, null);
         if (cursor.moveToFirst()) {
             do {
-                //find the stored username and password at each ID
+                //Find the stored username and password at each ID
                 String dbUsername = cursor.getString(1);
                 String dbPassword = cursor.getString(2);
 
-                //compare to the given username and password
+                //Compare to the user given username and password
                 if (username.equals(dbUsername)) {
                     if (password.equals(dbPassword)) {
                         //update valid

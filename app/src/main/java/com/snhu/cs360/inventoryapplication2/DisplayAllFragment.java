@@ -72,16 +72,19 @@ public class DisplayAllFragment extends Fragment implements DisplayOneFragment.I
         fab.setOnClickListener(l -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
+            //Item display container
             View editView = inflater.inflate(R.layout.item_display, null);
             builder.setView(editView);
             builder.setTitle("Add Item");
 
+            //Pulls EditText values
             EditText txtItemName = editView.findViewById(R.id.txtItemName);
             EditText txtItemQuantity = editView.findViewById(R.id.txtItemQuantity);
             EditText txtItemUnits = editView.findViewById(R.id.txtItemUnits);
             EditText txtItemValue = editView.findViewById(R.id.txtItemValue);
             EditText txtItemLocation = editView.findViewById(R.id.txtItemLocation);
 
+            //Confirmed user input
             builder.setPositiveButton("ok", (dialogInterface, i) -> {
 
                 String name = txtItemName.getText().toString();

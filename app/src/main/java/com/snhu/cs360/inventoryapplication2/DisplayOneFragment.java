@@ -50,7 +50,8 @@ public class DisplayOneFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        // Individual item display
         View view = inflater.inflate(R.layout.fragment_display_one, container, false);
 
         TextView itemNameTextView = (TextView) view.findViewById(R.id.itemName);
@@ -70,11 +71,13 @@ public class DisplayOneFragment extends Fragment {
 
         Button btnEdit = view.findViewById(R.id.btnEdit);
 
+        //Edit button
         btnEdit.setOnClickListener(l -> {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             builder.setTitle("Edit Item Details");
 
+            //Item display container
             View editView = inflater.inflate(R.layout.item_display, null);
             builder.setView(editView);
 
@@ -93,6 +96,7 @@ public class DisplayOneFragment extends Fragment {
             EditText txtItemLocation = editView.findViewById(R.id.txtItemLocation);
             txtItemLocation.setText(item.getLocation());
 
+            //Confirmed user input
             builder.setPositiveButton("Ok", (dialogInterface, i) -> {
                 String name = txtItemName.getText().toString();
                 int quantity = Integer.parseInt(txtItemQuantity.getText().toString());
@@ -108,6 +112,8 @@ public class DisplayOneFragment extends Fragment {
                     Toast.makeText(getContext(), "Error Editing Item", Toast.LENGTH_SHORT).show();
                     //FIXME: DisplayOneFragment does not update fragment_display_one.xml until revisiting the fragment
                 } else {
+
+                    //Pull user info and set it to the textViews on DisplayOneActivity
                     listeners.forEach(listener -> listener.handleEdited(item, edited));
                     item = edited;
                     txtItemName.setText(item.getName());
@@ -115,6 +121,11 @@ public class DisplayOneFragment extends Fragment {
                     txtItemUnits.setText(item.getUnits());
                     txtItemValue.setText(Integer.toString(item.getValue()));
                     txtItemLocation.setText(item.getLocation());
+
+                    //Inform the user an item is running low
+                    if (item.getQuantity() < 6) {
+                        Toast.makeText(getContext(), item.getName() + " is running low!", Toast. LENGTH_SHORT).show();
+                    }
                 }
             });
 
@@ -124,6 +135,7 @@ public class DisplayOneFragment extends Fragment {
             builder.show();
         });
 
+        //Delete button
         Button btnDelete = view.findViewById(R.id.btnDelete);
         btnDelete.setOnClickListener(l -> {
             boolean isDeleted = ItemsDatabase.getInstance(getContext()).deleteItem(item.getId());

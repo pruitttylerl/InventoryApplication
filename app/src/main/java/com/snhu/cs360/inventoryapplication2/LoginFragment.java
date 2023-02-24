@@ -7,18 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class LoginFragment extends Fragment {
 
@@ -30,17 +24,21 @@ public class LoginFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //Login screen
         View view = inflater.inflate(R.layout.login, container, false);
 
         Button btnRegister = view.findViewById(R.id.btnRegister);
 
+        //Register button
         btnRegister.setOnClickListener(l -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
+            //register screen
             View editView = inflater.inflate(R.layout.register, null);
             builder.setView(editView);
             builder.setTitle("Create Login");
 
+            //Pull text from editTexts
             EditText txtUsername = editView.findViewById(R.id.txtCreateUsername);
             EditText txtPassword = editView.findViewById(R.id.txtCreatePassword);
 
@@ -62,10 +60,12 @@ public class LoginFragment extends Fragment {
             builder.show();
         });
 
+        //Submit button
         Button btnSubmit = view.findViewById(R.id.btnSubmit);
 
         btnSubmit.setOnClickListener(l -> {
-            //pull text from editViews
+
+            //Pull text from editTexts
             EditText txtUsername = view.findViewById(R.id.usernameEditText);
             EditText txtPassword = view.findViewById(R.id.passwordEditText);
             String username = txtUsername.getText().toString();
@@ -79,26 +79,51 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        /*Button btnNotifications = view.findViewById(R.id.btnNotifications);
+        //Notification button
+        AtomicBoolean notifStatus = new AtomicBoolean(false);
 
-        btnRegister.setOnClickListener(lRegister -> {
+        Button btnNotifications = view.findViewById(R.id.btnNotifications);
+
+        btnNotifications.setOnClickListener(lRegister -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
             View editView = inflater.inflate(R.layout.fragment_notification_display, null);
             builder.setView(editView);
             builder.setTitle("Notification Preference");
 
-            Button btnEnable = editView.findViewById(R.id.btnNotifDisable);
-            Button btnDisable = editView.findViewById(R.id.btnNotifEnable);
+            Button btnEnable = editView.findViewById(R.id.btnNotifEnable);
+            Button btnDisable = editView.findViewById(R.id.btnNotifDisable);
 
+            //Initial button status to reflect notification status
+            if (notifStatus.get()){
+                btnEnable.setEnabled(false);
+            } else {
+                btnEnable.setEnabled(true);
+            }
+
+            //Enable button
+        // notifStatus is true when enabled. Enable button is disabled when true
             btnEnable.setOnClickListener(lEnable -> {
+            notifStatus.set(true);
+            btnEnable.setEnabled(false);
+            btnDisable.setEnabled(true);
 
         });
+
+            //Disable button
+            // notifStatus is false when disabled. Disable button is disabled when false
             btnDisable.setOnClickListener(lDisable -> {
+                notifStatus.set(false);
+                btnDisable.setEnabled(false);
+                btnEnable.setEnabled(true);
 
             });
 
-        }); */
+            builder.create();
+
+            builder.show();
+
+        });
         return view;
     }
 }

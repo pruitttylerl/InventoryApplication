@@ -7,6 +7,9 @@ import android.view.MenuInflater;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//not implemented yet.
+// TODO: Properly implement the preference class to allow for a more professional settings menu
+
 public class SettingsActivity extends AppCompatActivity {
     private boolean notifStatus;
     private SharedPreferences sharedPrefs;

@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/loginBackground">
 
     <TextView
         android:id="@+id/txtNotifHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_200"
         android:padding="10dp"
         android:text="@string/notification"
-        android:gravity="center"
         android:textColor="@color/white"
+        android:gravity="center"
         android:textSize="18sp" />
 
     <TextView
@@ -30,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:backgroundTint="@color/purple_200"
         android:text="@string/enable"
         android:textSize="18sp" />
     <Button
@@ -38,7 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:backgroundTint="@color/purple_200"
         android:text="@string/disable"
         android:textSize="18sp" />
 
